@@ -42,7 +42,7 @@ export class WebSocketChatService {
   connect(): Promise<void> {
     return new Promise((resolve, reject) => {
       try {
-        const wsUrl = process.env.EXPO_PUBLIC_WS_URL || "ws://localhost:3000/ws/chat";
+        const wsUrl = process.env.EXPO_PUBLIC_WS_URL || "wss://lexhelps.com/ws/chat";
         this.socket = new WebSocket(wsUrl);
 
         this.socket.onopen = () => {
