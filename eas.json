@@ -1,0 +1,39 @@
+{
+  "cli": {
+    "version": ">= 5.2.0",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "channel": "development"
+    },
+    "preview": {
+      "distribution": "internal",
+      "channel": "preview"
+    },
+    "production": {
+      "ios": {
+        "resourceClass": "medium"
+      },
+      "android": {
+        "resourceClass": "medium"
+      },
+      "channel": "production"
+    }
+  },
+  "submit": {
+    "production": {
+      "ios": {
+        "appleId": "shoha_999@bk.ru",
+        "ascAppId": "6747161585",
+        "appleTeamId": "3SZQ9MW3F4"
+      },
+      "android": {
+        "serviceAccountKeyPath": "./path/to/service-account-key.json",
+        "track": "production"
+      }
+    }
+  }
+}

@@ -1,31 +1,40 @@
 {
   "expo": {
-    "name": "client",
-    "slug": "client",
+    "name": "Lex Helps",
+    "slug": "lex-helps",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "client",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
-
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
     "ios": {
       "supportsTablet": true,
+      "bundleIdentifier": "com.lexhelps.app",
+      "buildNumber": "1.0.0",
       "infoPlist": {
         "NSLocationWhenInUseUsageDescription": "Это приложение использует ваше местоположение для предоставления актуальных новостей в вашем регионе.",
-        "NSLocationAlwaysAndWhenInUseUsageDescription": "Это приложение использует ваше местоположение для предоставления актуальных новостей в вашем регионе."
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Это приложение использует ваше местоположение для предоставления актуальных новостей в вашем регионе.",
+        "ITSAppUsesNonExemptEncryption": false
       }
     },
-
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true,
-      "permissions": ["ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION"]
+      "package": "com.lexhelps.app",
+      "versionCode": 1,
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION"
+      ]
     },
-
     "web": {
       "bundler": "metro",
       "output": "static",
@@ -43,16 +52,29 @@
         }
       ],
       "expo-secure-store",
-
       [
         "expo-location",
         {
           "locationAlwaysAndWhenInUsePermission": "Позволить $(PRODUCT_NAME) использовать ваше местоположение."
         }
-      ]
+      ],
+      "expo-updates"
     ],
+    "updates": {
+      "url": "https://u.expo.dev/0a5aab84-586c-490b-9a7c-099c5733f0f6"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "0a5aab84-586c-490b-9a7c-099c5733f0f6"
+      }
+    },
+    "owner": "shahzod999"
   }
 }

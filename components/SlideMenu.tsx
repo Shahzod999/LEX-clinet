@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import {
   View,
   Text,
@@ -25,6 +25,9 @@ import { selectUser } from "@/redux/features/userSlice";
 
 export default function SlideMenu() {
   const profile = useAppSelector(selectUser);
+  
+  // Memoize profile data to prevent unnecessary re-renders
+  const memoizedProfile = useMemo(() => profile, [profile?._id, profile?.name, profile?.profilePicture]);
 
   const dispatch = useAppDispatch();
   const { menuVisible, hideMenu } = useMenu();
@@ -139,13 +142,13 @@ export default function SlideMenu() {
               <View style={styles.profileHeader}>
                 <Image
                   source={{
-                    uri: getValidatedUrl(profile?._id, profile?.profilePicture),
+                    uri: getValidatedUrl(memoizedProfile?._id, memoizedProfile?.profilePicture),
                   }}
                   style={styles.avatar}
                 />
                 <View style={styles.profileInfo}>
                   <Text style={[styles.userName, { color: colors.text }]}>
-                    Hi {profile?.name}
+                    Hi {memoizedProfile?.name}
                   </Text>
                   <Text style={[styles.welcomeText, { color: colors.hint }]}>
                     Welcome Back!
