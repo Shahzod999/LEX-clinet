@@ -14,7 +14,7 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.lexhelps.app",
-      "buildNumber": "1.0.0",
+      "buildNumber": "1.0.2",
       "infoPlist": {
         "NSLocationWhenInUseUsageDescription": "Это приложение использует ваше местоположение для предоставления актуальных новостей в вашем регионе.",
         "NSLocationAlwaysAndWhenInUseUsageDescription": "Это приложение использует ваше местоположение для предоставления актуальных новостей в вашем регионе.",
