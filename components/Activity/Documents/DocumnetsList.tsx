@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import React from "react";
 import Documents from "./Documents";
 import {
@@ -57,5 +57,3 @@ const DocumnetsList = () => {
 };
 
 export default DocumnetsList;
-
-const styles = StyleSheet.create({});

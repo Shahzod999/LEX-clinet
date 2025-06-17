@@ -1,7 +1,7 @@
 import Header from "@/components/Card/Header";
 import ThemedScreen from "@/components/ThemedScreen";
 import ToggleTabsRN from "@/components/ToggleTabs/ToggleTabsRN";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 import { useState } from "react";
 
 import DocumnetsList from "@/components/Activity/Documents/DocumnetsList";

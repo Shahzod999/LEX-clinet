@@ -47,7 +47,7 @@ const ToggleTabsRN: React.FC<TabsProps> = ({ tabs, onTabChange, setOrderType, ac
       duration: 300,
       useNativeDriver: false,
     }).start();
-  }, [activeTab, tabWidths, visibleTabs]);
+  }, [activeTab, tabWidths, visibleTabs, slideAnim]);
 
   const onTabLayout = (event: LayoutChangeEvent, tabId: string) => {
     const { width } = event.nativeEvent.layout;

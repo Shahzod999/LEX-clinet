@@ -24,7 +24,7 @@ const CurrentDocumentScreen = () => {
   const { id } = useLocalSearchParams();
   const idString = id as string;
   const { showSuccess, showError } = useToast();
-  const { data: document, isLoading, error } = useGetUserCurrentDocumentQuery(idString);
+  const { data: document, isLoading } = useGetUserCurrentDocumentQuery(idString);
   const [updateDocument, { isLoading: isUpdating }] = useUpdateDocumentMutation();
   const { visible, fileData, openFile, closeFile } = useFileReader();
 
@@ -57,7 +57,7 @@ const CurrentDocumentScreen = () => {
     return <LoadingScreen />;
   }
 
-  if (error || !document) {
+  if (!document) {
     return (
       <ThemedScreen>
         <Stack.Screen
@@ -92,7 +92,7 @@ const CurrentDocumentScreen = () => {
                 <StatusBox
                   key={status}
                   status={status}
-                  color={status == document.info.status ? colors.accent : colors.hint}
+                  color={status === document.info.status ? colors.accent : colors.hint}
                   onPress={() => {
                     handleUpdateDocument({ status: status });
                   }}

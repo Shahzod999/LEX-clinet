@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet } from "react-native";
 import React from "react";
 import ImmigrationCard from "@/components/Card/ImmigrationCard";
 import ThemedScreen from "@/components/ThemedScreen";
@@ -64,5 +64,3 @@ const immigration = () => {
 };
 
 export default immigration;
-
-const styles = StyleSheet.create({});

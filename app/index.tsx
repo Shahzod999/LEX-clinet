@@ -20,7 +20,7 @@ export default function Index() {
       setIsLoading(false);
     };
     loadToken();
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (!isLoading) {
@@ -30,7 +30,7 @@ export default function Index() {
         router.replace("/register");
       }
     }
-  }, [isLoading, token]);
+  }, [isLoading, token, router]);
 
   return <LoadingScreen />;
 }

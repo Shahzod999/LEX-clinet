@@ -9,7 +9,6 @@ import React from "react";
 import ThemedCard from "@/components/ThemedCard";
 import { Ionicons } from "@expo/vector-icons";
 import { useTheme } from "@/context/ThemeContext";
-import { Link } from "expo-router";
 import { NewsItem } from "./NewsList";
 
 const News = ({ title, description, source, time, link }: NewsItem) => {

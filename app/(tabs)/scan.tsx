@@ -68,7 +68,7 @@ const ScanScreen = () => {
       console.log(`📄 Subscribing to document chat: ${documentChatId}`);
       documentChat.subscribeToChat();
     }
-  }, [documentChatId, isConnected, documentChat.isSubscribed]);
+  }, [documentChatId, isConnected, documentChat.isSubscribed, documentChat]);
 
   const displayMessages = useMemo(() => {
     const messages = [...documentChat.messages];

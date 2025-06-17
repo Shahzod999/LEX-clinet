@@ -1,9 +1,8 @@
 import React, { useRef, useState } from "react";
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, Platform, KeyboardAvoidingView, ScrollView } from "react-native";
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Platform } from "react-native";
 import { useTheme } from "@/context/ThemeContext";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import BottomModal from "@/components/Modal/BottomModal";
-import ThemedButton from "@/components/ThemedButton";
 import { Ionicons } from "@expo/vector-icons";
 import { useCreateReminderMutation } from "@/redux/api/endpoints/reminderApi";
 import { useToast } from "@/context/ToastContext";

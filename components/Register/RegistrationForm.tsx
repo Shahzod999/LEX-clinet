@@ -6,8 +6,6 @@ import {
   TextInput,
   TouchableOpacity,
   Platform,
-  KeyboardAvoidingView,
-  ScrollView,
 } from "react-native";
 import { useTheme } from "@/context/ThemeContext";
 import DateTimePicker from "@react-native-community/datetimepicker";
@@ -274,24 +272,18 @@ const RegistrationForm: React.FC<RegistrationFormProps> = ({
   );
 
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === "ios" ? "padding" : "height"}
-      style={styles.container}>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.container}>
-          <Title
-            title={step === 1 ? "Personal Information" : "Account Details"}
-            subtitle={
-              step === 1
-                ? "Please provide your personal details"
-                : "Create your account credentials"
-            }
-          />
-          {step === 1 && renderStep1()}
-          {step === 2 && renderStep2()}
-        </View>
-      </ScrollView>
-    </KeyboardAvoidingView>
+    <View style={styles.container}>
+      <Title
+        title={step === 1 ? "Personal Information" : "Account Details"}
+        subtitle={
+          step === 1
+            ? "Please provide your personal details"
+            : "Create your account credentials"
+        }
+      />
+      {step === 1 && renderStep1()}
+      {step === 2 && renderStep2()}
+    </View>
   );
 };
 

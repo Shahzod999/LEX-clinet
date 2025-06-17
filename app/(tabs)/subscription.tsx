@@ -1,8 +1,6 @@
 import { Text, View, StyleSheet, ScrollView, SafeAreaView } from "react-native";
 import { useTheme } from "../../context/ThemeContext";
 import ThemedCard from "../../components/ThemedCard";
-import ThemedButton from "../../components/ThemedButton";
-import { Ionicons } from "@expo/vector-icons";
 import InfoCard from "@/components/Info/InfoCard";
 import PlanCards from "@/components/Subscription/PlanCards";
 

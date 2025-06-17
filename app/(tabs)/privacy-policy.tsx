@@ -3,8 +3,8 @@ import { Ionicons } from "@expo/vector-icons";
 import * as FileSystem from "expo-file-system";
 import * as Sharing from "expo-sharing";
 import { Asset } from "expo-asset";
-import ThemedScreen from "@/components/ThemedScreen";
-import ThemedCard from "@/components/ThemedCard";
+import { ThemedScreen } from "@/components/ThemedScreen";
+import { ThemedCard } from "@/components/ThemedCard";
 import { useTheme } from "@/context/ThemeContext";
 
 export default function PrivacyPolicyScreen() {
@@ -69,17 +69,18 @@ export default function PrivacyPolicyScreen() {
           <ThemedCard style={styles.section}>
             <Text style={[styles.sectionTitle, { color: colors.accent }]}>1. Introduction</Text>
             <Text style={[styles.sectionText, { color: colors.text }]}>
-              CDL Carolinas LLC ("Lex," "we," "our," or "us") is committed to protecting your privacy and ensuring the safety of your personal
-              information. This Privacy Policy outlines how we collect, use, disclose, and safeguard information when you interact with our mobile and
-              web applications, website https://www.lexhelps.com, and related services (collectively, "Lex" or "the Service").
+              Welcome to Lex. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile
+              application and related services (collectively, the &quot;Service&quot;). Please read this privacy policy carefully. If you do not agree with the terms
+              of this privacy policy, please do not access the Service.
             </Text>
             <Text style={[styles.sectionText, { color: colors.text }]}>
-              Lex offers multilingual legal and immigration assistance powered by AI and document analysis features. This Policy also covers our use
-              of artificial intelligence, geolocation services, and third-party integrations.
+              We reserve the right to make changes to this Privacy Policy at any time and for any reason. We will alert you about any changes by
+              updating the &quot;Last updated&quot; date of this Privacy Policy. You are encouraged to periodically review this Privacy Policy to stay informed
+              of updates.
             </Text>
             <Text style={[styles.sectionText, { color: colors.text }]}>
-              By using Lex, you acknowledge and accept the practices described in this Policy. If you do not agree with the terms, please do not use
-              the Service.
+              You will be deemed to have been made aware of, will be subject to, and will be deemed to have accepted the changes in any revised
+              Privacy Policy by your continued use of the Service after the date such revised Privacy Policy is posted.
             </Text>
           </ThemedCard>
 
@@ -133,7 +134,7 @@ export default function PrivacyPolicyScreen() {
 
             <Text style={[styles.subsectionTitle, { color: colors.accent }]}>h. Translation Logs</Text>
             <Text style={[styles.sectionText, { color: colors.text }]}>
-              When using Lex's translation feature, your text is temporarily processed to complete translation requests. These logs are securely
+              When using Lex&apos;s translation feature, your text is temporarily processed to complete translation requests. These logs are securely
               discarded after the session.
             </Text>
           </ThemedCard>
@@ -142,7 +143,7 @@ export default function PrivacyPolicyScreen() {
             <Text style={[styles.sectionTitle, { color: colors.accent }]}>3. How We Use Your Information</Text>
             <Text style={[styles.sectionText, { color: colors.text }]}>
               Lex processes your information solely to deliver, enhance, and secure the services we provide. Our use of your data aligns strictly with
-              the platform's core legal support functions.
+              the platform&apos;s core legal support functions.
             </Text>
 
             <Text style={[styles.subsectionTitle, { color: colors.accent }]}>a. Service Delivery & Personalization</Text>

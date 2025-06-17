@@ -6,7 +6,6 @@ import {
   Image,
   TouchableOpacity,
   ScrollView,
-  Switch,
   Animated,
   TouchableWithoutFeedback,
   Modal,
@@ -206,16 +205,6 @@ export default function SlideMenu() {
                   <Text style={[styles.menuItemText, { color: colors.text }]}>
                     Dark Mode
                   </Text>
-                  <Switch
-                    value={isDarkMode}
-                    onValueChange={toggleTheme}
-                    style={styles.switch}
-                    trackColor={{
-                      false: "#767577",
-                      true: colors.accent + "80",
-                    }}
-                    thumbColor={isDarkMode ? colors.accent : "white"}
-                  />
                 </View>
 
                 <View style={styles.menuItem}>
@@ -227,16 +216,6 @@ export default function SlideMenu() {
                   <Text style={[styles.menuItemText, { color: colors.text }]}>
                     Notifications
                   </Text>
-                  <Switch
-                    value={notifications}
-                    onValueChange={setNotifications}
-                    style={styles.switch}
-                    trackColor={{
-                      false: "#767577",
-                      true: colors.accent + "80",
-                    }}
-                    thumbColor={notifications ? colors.accent : "white"}
-                  />
                 </View>
 
                 <TouchableOpacity
@@ -475,9 +454,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginLeft: 15,
     flex: 1,
-  },
-  switch: {
-    transform: [{ scaleX: 0.8 }, { scaleY: 0.8 }],
   },
   chevron: {
     marginLeft: 5,

@@ -23,7 +23,6 @@ const ReindersList = () => {
     }
   };
 
-
   return (
     <View>
       <ThemedButton title="Add Reminder" onPress={() => setShowCreateModal(true)} icon="add" />
@@ -48,5 +47,3 @@ const ReindersList = () => {
 };
 
 export default ReindersList;
-
-const styles = StyleSheet.create({});

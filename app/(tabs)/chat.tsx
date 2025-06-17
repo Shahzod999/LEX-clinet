@@ -53,7 +53,7 @@ const ChatScreen = () => {
     if (selectedChatId && isConnected && !selectedChat.isSubscribed) {
       selectedChat.subscribeToChat();
     }
-  }, [selectedChatId, isConnected, selectedChat.isSubscribed]);
+  }, [selectedChatId, isConnected, selectedChat.isSubscribed, selectedChat]);
 
   const getDisplayMessages = (): UIMessage[] => {
     if (selectedChat.chatState && selectedChat.chatState.chatId === selectedChatId) {

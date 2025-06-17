@@ -60,9 +60,9 @@ export default function TermsOfUseScreen() {
           <ThemedCard style={styles.section}>
             <Text style={[styles.sectionTitle, { color: colors.accent }]}>1. Acceptance of Terms</Text>
             <Text style={[styles.sectionText, { color: colors.text }]}>
-              By accessing or using the Lex platform ("Lex," "we," "our," or "us"), you agree to be legally bound by these Terms of Use ("Terms").
+              By accessing or using the Lex platform (&quot;Lex,&quot; &quot;we,&quot; &quot;our,&quot; or &quot;us&quot;), you agree to be legally bound by these Terms of Use (&quot;Terms&quot;).
               These Terms govern your use of our website, mobile applications, services, tools, and any other platform functionality (collectively,
-              the "Services"). If you do not agree with any part of these Terms, you must not access or use the Services. These Terms apply to all
+              the &quot;Services&quot;). If you do not agree with any part of these Terms, you must not access or use the Services. These Terms apply to all
               visitors, users, and others who access or use the Services, and form a legally binding agreement between you and CDL Carolinas LLC.
             </Text>
           </ThemedCard>
@@ -99,7 +99,7 @@ export default function TermsOfUseScreen() {
           <ThemedCard style={styles.section}>
             <Text style={[styles.sectionTitle, { color: colors.accent }]}>5. No Legal Advice or Representation</Text>
             <Text style={[styles.sectionText, { color: colors.text }]}>
-              Lex is not a law firm and does not provide legal representation. The content, responses, and documents generated through Lex's AI
+              Lex is not a law firm and does not provide legal representation. The content, responses, and documents generated through Lex AI
               systems are not legal advice and should not be relied upon as such. We do not guarantee the accuracy, completeness, or currentness of
               any legal information. The Services do not replace the need for professional legal consultation, and use of Lex does not create an
               attorney-client relationship.
@@ -146,7 +146,7 @@ export default function TermsOfUseScreen() {
           <ThemedCard style={styles.section}>
             <Text style={[styles.sectionTitle, { color: colors.accent }]}>10. Disclaimer of Warranties</Text>
             <Text style={[styles.sectionText, { color: colors.text }]}>
-              The Services are provided on an "as is" and "as available" basis without warranties of any kind, express or implied. We do not warrant
+              The Services are provided on an &quot;as is&quot; and &quot;as available&quot; basis without warranties of any kind, express or implied. We do not warrant
               that the Services will be accurate, complete, error-free, secure, or uninterrupted. To the fullest extent permitted by law, we disclaim
               all warranties, including any implied warranties of merchantability, fitness for a particular purpose, or non-infringement. Your use of
               the Services is at your own risk.

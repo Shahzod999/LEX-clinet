@@ -6,7 +6,6 @@ import RegistrationForm from "@/components/Register/RegistrationForm";
 import ThemedButton from "@/components/ThemedButton";
 import { Link, router } from "expo-router";
 import { useRegisterMutation } from "@/redux/api/endpoints/authApiSlice";
-import { WebView } from "react-native-webview";
 
 const RegisterScreen = () => {
   const [selectedLanguage, setSelectedLanguage] = useState<string | undefined>();
@@ -78,7 +77,7 @@ const RegisterScreen = () => {
       )}
 
       <View style={styles.linkContainer}>
-        <Text style={styles.disclaimerText}>Нажимая "Продолжить", вы подтверждаете, что ознакомились и согласны с:</Text>
+        <Text style={styles.disclaimerText}>Нажимая &quot;Продолжить&quot;, вы подтверждаете, что ознакомились и согласны с:</Text>
         <View style={styles.linksRow}>
           <Link href="https://www.lexhelps.com/privacy" style={styles.link}>
             Политикой конфиденциальности

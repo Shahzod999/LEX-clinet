@@ -1,4 +1,4 @@
-import { Tabs } from "expo-router";
+import { Tabs , useRouter } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { Text, View, TouchableOpacity } from "react-native";
 import { useMenu } from "../../context/MenuContext";
@@ -6,7 +6,6 @@ import { useTheme } from "../../context/ThemeContext";
 import { ChatProvider } from "../../context/ChatContext";
 import SlideMenu from "../../components/SlideMenu";
 import { useEffect, useState } from "react";
-import { useRouter } from "expo-router";
 import { useAppSelector } from "@/hooks/reduxHooks";
 import { selectToken } from "@/redux/features/tokenSlice";
 import { getTokenFromSecureStore } from "@/utils/secureStore";
@@ -33,7 +32,7 @@ export default function TabsLayout() {
         setCheckingToken(false);
       });
     }
-  }, [token]);
+  }, [token, router]);
 
   if (checkingToken) {
     return <LoadingScreen />;
