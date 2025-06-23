@@ -2,7 +2,7 @@
   "expo": {
     "name": "Lex Helps",
     "slug": "lex-helps",
-    "version": "1.0.0",
+    "version": "1.0.25",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "userInterfaceStyle": "automatic",
@@ -13,8 +13,8 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.lexhelps.app",
-      "buildNumber": "1.0.3",
+      "bundleIdentifier": "com.cdlcarolinas.lex",
+      "buildNumber": "1.0.25",
       "infoPlist": {
         "NSLocationWhenInUseUsageDescription": "Это приложение использует ваше местоположение для предоставления актуальных новостей в вашем регионе.",
         "NSLocationAlwaysAndWhenInUseUsageDescription": "Это приложение использует ваше местоположение для предоставления актуальных новостей в вашем регионе.",
@@ -26,8 +26,8 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.lexhelps.app",
-      "versionCode": 3,
+      "package": "com.cdlcarolinas.lex",
+      "versionCode": 25,
       "permissions": [
         "ACCESS_FINE_LOCATION",
         "ACCESS_COARSE_LOCATION",
@@ -58,23 +58,18 @@
           "locationAlwaysAndWhenInUsePermission": "Позволить $(PRODUCT_NAME) использовать ваше местоположение."
         }
       ],
-      "expo-updates"
+      "expo-web-browser"
     ],
-    "updates": {
-      "url": "https://u.expo.dev/0a5aab84-586c-490b-9a7c-099c5733f0f6"
-    },
-    "runtimeVersion": {
-      "policy": "appVersion"
-    },
+    "runtimeVersion": "1.0.25",
     "experiments": {
       "typedRoutes": true
     },
     "extra": {
       "router": {},
       "eas": {
-        "projectId": "0a5aab84-586c-490b-9a7c-099c5733f0f6"
+        "projectId": "19b2cbb1-515e-4a99-a3e1-7bc79df9f694"
       }
     },
-    "owner": "shahzod999"
+    "owner": "doniexpo"
   }
 }
