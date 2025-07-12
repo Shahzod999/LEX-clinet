@@ -23,7 +23,7 @@ const ResetPassword = () => {
   // API mutation for reset password
   const resetPasswordMutation = useMutation({
     mutationFn: async ({ token, password }: { token: string; password: string }) => {
-      const response = await fetch("/api/auth/reset-password", {
+      const response = await fetch("/api/users/reset-password", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
