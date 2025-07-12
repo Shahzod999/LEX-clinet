@@ -40,9 +40,8 @@ const ResetPassword = () => {
     onSuccess: () => {
       setSuccess("Password reset successfully! Redirecting to login...");
       setError("");
-      // Redirect to login after 2 seconds
       setTimeout(() => {
-        setLocation("/login");
+        setLocation("/");
       }, 2000);
     },
     onError: () => {
