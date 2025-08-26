@@ -9,6 +9,7 @@ import PrivacyPolicy from "@/pages/privacy-policy";
 import TermsOfUse from "@/pages/terms-of-use";
 import Support from "@/pages/support";
 import ResetPassword from "@/pages/ResetPassword";
+import AdminPage from "./pages/adminPage";
 
 function Router() {
   return (
@@ -18,6 +19,7 @@ function Router() {
       <Route path="/terms-of-use" component={TermsOfUse} />
       <Route path="/support" component={Support} />
       <Route path="/reset-password" component={ResetPassword} />
+      <Route path="/admin" component={AdminPage} />
       <Route component={NotFound} />
     </Switch>
   );
