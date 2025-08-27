@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import { useGetQuoteQuery, useCreateQuoteMutation, useDeleteQuoteMutation, useUpdateQuoteMutation } from "../api/endpoints/quoteSlice";
 import type { QuoteRequest } from "../types/quote";
-import { Plus, Edit, Trash2, X, Save, Loader2 } from "lucide-react";
-import QuoteStats from "../components/QuoteStats";
+import { Plus, Edit, Trash2, X, Save, Loader2, LogOut } from "lucide-react";
+import ProtectedAdminRoute from "../components/ProtectedAdminRoute";
+import { clearToken } from "@/store/slice/tokenSlice";
+import { useAppDispatch } from "@/hooks/redux";
 
-const AdminPage = () => {
+const AdminPageContent = () => {
   const { data: quotes, isLoading, error, refetch } = useGetQuoteQuery();
   const [createQuote] = useCreateQuoteMutation();
   const [deleteQuote] = useDeleteQuoteMutation();
   const [updateQuote] = useUpdateQuoteMutation();
-
+  const dispatch = useAppDispatch();
   const [showCreateModal, setShowCreateModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
   const [editingQuote, setEditingQuote] = useState<QuoteRequest | null>(null);
@@ -81,6 +83,10 @@ const AdminPage = () => {
     setEditingQuote(null);
   };
 
+  const handlelogOut = () => {
+    dispatch(clearToken());
+  };
+
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
@@ -108,26 +114,24 @@ const AdminPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-6">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
-          <div className="flex items-center justify-between mb-6">
-            <div>
-              <h1 className="text-3xl font-bold text-gray-900">Quote Management</h1>
-              <p className="text-gray-600 mt-2">Manage inspirational quotes for your application</p>
-            </div>
-            <button
-              onClick={() => setShowCreateModal(true)}
-              className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 flex items-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-            >
-              <Plus className="w-5 h-5" />
-              Add New Quote
-            </button>
-          </div>
-
-          {quotes && <QuoteStats quotes={quotes} />}
+        <div className="flex items-center gap-4 justify-end mb-4">
+          <button
+            onClick={() => setShowCreateModal(true)}
+            className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 flex items-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+          >
+            <Plus className="w-5 h-5" />
+            Add New Quote
+          </button>
+          <button
+            onClick={handlelogOut}
+            className="bg-gradient-to-r from-red-600 to-pink-600 text-white px-4 py-3 rounded-xl hover:from-red-700 hover:to-pink-700 transition-all duration-200 flex items-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+            title="Sign out"
+          >
+            <LogOut className="w-5 h-5" />
+            Sign Out
+          </button>
         </div>
 
-        {/* Search and Filter */}
         <div className="bg-white rounded-2xl shadow-lg p-6 mb-6">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-lg font-semibold text-gray-900">Search & Filter</h3>
@@ -421,6 +425,14 @@ const AdminPage = () => {
         )}
       </div>
     </div>
+  );
+};
+
+const AdminPage = () => {
+  return (
+    <ProtectedAdminRoute>
+      <AdminPageContent />
+    </ProtectedAdminRoute>
   );
 };
 

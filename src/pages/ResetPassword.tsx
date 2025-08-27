@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import { useLocation } from "wouter";
-import { useMutation } from "@tanstack/react-query";
+import { useResetPasswordMutation } from "@/api/endpoints/authSlice";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Lock, CheckCircle, AlertCircle, Loader2, Eye, EyeOff } from "lucide-react";
+import { useNavigate } from "react-router";
 
 const ResetPassword = () => {
-  const [, setLocation] = useLocation();
+  const navigate = useNavigate();
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
@@ -20,35 +20,8 @@ const ResetPassword = () => {
   const urlParams = new URLSearchParams(window.location.search);
   const token = urlParams.get("token");
 
-  // API mutation for reset password
-  const resetPasswordMutation = useMutation({
-    mutationFn: async ({ token, password }: { token: string; password: string }) => {
-      const response = await fetch("/api/users/reset-password", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ token, password }),
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to reset password");
-      }
-
-      return response.json();
-    },
-    onSuccess: () => {
-      setSuccess("Password reset successfully! Redirecting to login...");
-      setError("");
-      setTimeout(() => {
-        setLocation("/");
-      }, 2000);
-    },
-    onError: () => {
-      setError("Failed to reset password. Please try again.");
-      setSuccess("");
-    },
-  });
+  // RTK Query mutation for reset password
+  const [resetPassword, { isLoading }] = useResetPasswordMutation();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -76,8 +49,18 @@ const ResetPassword = () => {
       return;
     }
 
-    // Submit form
-    resetPasswordMutation.mutate({ token, password });
+    try {
+      // Submit form using RTK Query
+      await resetPassword({ token, password }).unwrap();
+      setSuccess("Password reset successfully! Redirecting to login...");
+      setError("");
+      setTimeout(() => {
+        navigate("/");
+      }, 1000);
+    } catch {
+      setError("Failed to reset password. Please try again.");
+      setSuccess("");
+    }
   };
 
   return (
@@ -177,9 +160,9 @@ const ResetPassword = () => {
                 <Button
                   type="submit"
                   className="w-full h-12 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-medium mt-2 shadow-md hover:shadow-lg transition-all duration-200"
-                  disabled={resetPasswordMutation.isPending}
+                  disabled={isLoading}
                 >
-                  {resetPasswordMutation.isPending ? (
+                  {isLoading ? (
                     <>
                       <Loader2 className="h-5 w-5 mr-2 animate-spin" />
                       Resetting...
